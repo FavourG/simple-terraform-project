@@ -1,6 +1,11 @@
 #create s3 bucket
 resource "aws_s3_bucket_public_access_block" "mybucket" {
   bucket = var.bucketname
+  
+  block_public_policy     = true
+  block_public_acls       = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
