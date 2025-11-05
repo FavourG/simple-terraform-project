@@ -1,5 +1,5 @@
 #create s3 bucket
-resource "aws_s3_bucket" "mybucket" {
+resource "aws_s3_bucket_public_access_block" "mybucket" {
   bucket = var.bucketname
 }
 
